@@ -1,0 +1,10 @@
+fs = 2000; % frekuensi
+t = 0:1/fs:1; % periode
+x = sin(2*pi*50*t) + sin(2*pi*250*t) + sin(2*pi*750*t); % data sinyal
+[b1,a] = butter(2,300/1000); %butter orde 2, 300/1000 = 0.3 ternormalisasi
+y1 = filter(b1,a,x);
+[b2,a] = butter(5,300/1000); %butter orde 5
+y2 = filter(b2,a,x);
+[b3,a] = butter(9,300/1000);%butter orde 9
+y3 = filter(b3,a,x);
+
